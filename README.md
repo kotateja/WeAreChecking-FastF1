@@ -1,7 +1,11 @@
 # Formula 1 Data Analysis & Modeling with FastF1
 
 ## 1 · Project Overview
-This repository provides a comprehensive pipeline for Formula 1 race data analysis, visualization, and modeling using the FastF1 API. It fetches official F1 timing and telemetry data via the FastF1 library, then preprocesses the data to explore various aspects of race performance. The project includes statistical analysis of tyre performance, driver consistency, and race pace, machine learning models to predict lap times, and rich visualizations (including interactive widgets) to interpret the results. Key outcomes include plots of race results and tyre degradation, ANOVA and mixed-model insights on lap times, clustering of driver styles from telemetry, and predictive models (gradient boosting, LightGBM, LSTM) evaluated on hold-out races. All data is retrieved on-the-fly from the FastF1 API (no manual data downloads needed), and the analysis outputs are fully reproducible via the provided code and Jupyter notebook.  
+This repository provides a comprehensive pipeline for Formula 1 race data analysis, visualisation, and modelling using the FastF1 API. Its name, "We Are Checking", is from Ferrari’s famously ambiguous radio communication from recent seasons, often announcing "we are checking" during strategic confusion without providing clear answers. Unlike Ferrari’s pit wall, this project actually does the checking thoroughly. 
+
+![Picsart_25-06-26_21-28-32-408](https://github.com/user-attachments/assets/84abb323-b6cf-4612-a89b-b34c1f8a3e75)
+
+It fetches official F1 timing and telemetry data via the FastF1 library, preprocesses the data, and explores various critical aspects of race performance. Included analyses cover statistical evaluations of tyre performance, driver consistency, and race pace, alongside machine learning models to predict lap times. Rich visualisations (with interactive widgets) illustrate key outcomes, such as race results and tyre degradation, insights from ANOVA and mixed-model tests on lap times, driver style clustering from telemetry data, and predictive modelling (gradient boosting, LightGBM, LSTM) evaluated on hold-out races. All data is retrieved dynamically via the FastF1 API—no manual downloads required—and the entire analysis pipeline is fully reproducible with the provided code and Jupyter notebook. 
 
 ---
 
