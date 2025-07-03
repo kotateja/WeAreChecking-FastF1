@@ -1,0 +1,77 @@
+# ------------------------------------------------------------
+#  FLIN – Formula 1 analytics & modelling toolkit
+#  Install locally:   pip install -e .
+# ------------------------------------------------------------
+
+[build-system]
+requires      = ["setuptools>=68.2", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name            = "flin"
+version         = "0.1.0"
+description     = "Formula 1 analytics and modelling toolkit (FastF1-powered)"
+authors         = [{ name = "kotateja" }]
+license         = { text = "MIT" }
+readme          = "README.md"
+requires-python = ">=3.9"
+
+# -----------------------------------------------------------------
+# *ONLY* libraries that the code actually imports at run-time.
+# Heavy dev-only tools (black, pytest, …) live in optional extras.
+# -----------------------------------------------------------------
+dependencies = [
+    "fastf1>=3.5.0",
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+    "scikit-learn>=1.3",
+    "statsmodels>=0.14",
+    "lightgbm>=4.0",
+    "torch>=2.2",
+    "ipykernel>=6.0",      # required by widgets inside Jupyter
+    "ipywidgets>=8.0",
+    "tqdm>=4.0",
+    "requests>=2.31",
+    "pyarrow>=20.0",       # feather I/O
+    "polars>=1.29"         # used in widgets / EDA helpers
+]
+
+[project.optional-dependencies]
+dev  = [
+    # linting / formatting
+    "black",
+    "isort",
+    "flake8",
+    "pre-commit",
+    # testing & coverage
+    "pytest",
+    "pytest-cov",
+    "coverage",
+]
+docs = [
+    "jupyter",
+    "jupyterlab",
+    "nbconvert",
+]
+
+# ------------------------------------------------------------
+# Setuptools-specific configuration
+# ------------------------------------------------------------
+[tool.setuptools]
+# Tell setuptools the source layout (“src/” style)
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where    = ["src"]
+include  = ["flin*"]
+
+# Exclude raw data, notebooks, cache, etc. from the final wheel
+[tool.setuptools.exclude-package-data]
+"*" = [
+  "*.ipynb",
+  "data/*",
+  "__pycache__/*",
+  ".DS_Store",
+]
